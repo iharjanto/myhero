@@ -17,10 +17,8 @@ def createApp(config_name):
     db.init_app(app)
     ms.init_app(app)
     return app
-
-
-app = createApp('dev')
-    
+app = createApp('prod')
+   
 migrate = Migrate(app, db)
 app.register_blueprint(exbp)
 
@@ -30,4 +28,3 @@ def index():
 
 if __name__ == '__main__':
     app.run()
-
